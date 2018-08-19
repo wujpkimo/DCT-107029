@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ConsoleApp1
 {
@@ -19,9 +20,11 @@ namespace ConsoleApp1
 
                 //var dept = db.Department.Find(1);
 
-                foreach (var dept in db.Department)
+                var department = db.Department.Include(p => p.Course);
+
+                foreach (var dept in department)
                 {
-                    Console.WriteLine(dept);
+                    Console.WriteLine(dept.Name);
                     foreach (var item in dept.Course)
                     {
                         Console.WriteLine("\t" + item.Title);
