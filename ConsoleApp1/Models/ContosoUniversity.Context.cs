@@ -28,10 +28,10 @@ namespace ConsoleApp1.Models
         }
     
         public virtual DbSet<Course> Course { get; set; }
-        public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<Enrollment> Enrollment { get; set; }
         public virtual DbSet<OfficeAssignment> OfficeAssignment { get; set; }
         public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<Department> Department { get; set; }
     
         public virtual ObjectResult<byte[]> Department_Update(Nullable<int> departmentID, string name, Nullable<decimal> budget, Nullable<System.DateTime> startDate, Nullable<int> instructorID, byte[] rowVersion_Original)
         {

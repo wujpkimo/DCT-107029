@@ -7,21 +7,34 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    internal class Program
     {
-        static int InsertedId;
+        private static int InsertedId;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             using (var db = new ContosoUniversityEntities())
             {
-                QueryCourse(db);
+                db.Database.Log = Console.WriteLine;
 
-                InsertDepartment(db);
+                //var dept = db.Department.Find(1);
 
-                UpdateDepartment(db);
+                foreach (var dept in db.Department)
+                {
+                    Console.WriteLine(dept);
+                    foreach (var item in dept.Course)
+                    {
+                        Console.WriteLine("\t" + item.Title);
+                    }
+                }
 
-                RemoveDepartment(db);
+                //QueryCourse(db);
+
+                //InsertDepartment(db);
+
+                //UpdateDepartment(db);
+
+                //RemoveDepartment(db);
             }
         }
 
