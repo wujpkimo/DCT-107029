@@ -24,6 +24,8 @@ namespace ConsoleApp1
 
                 var department = db.Department.Include(p => p.Course);
 
+                //db.Course.Attach();
+
                 foreach (var dept in department)
                 {
                     Console.WriteLine(dept.Name);
