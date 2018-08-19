@@ -18,6 +18,8 @@ namespace ConsoleApp1
             {
                 db.Database.Log = Console.WriteLine;
 
+                db.Configuration.LazyLoadingEnabled = false;
+                //db.Configuration.ProxyCreationEnabled = false;
                 //var dept = db.Department.Find(1);
 
                 var department = db.Department.Include(p => p.Course);
