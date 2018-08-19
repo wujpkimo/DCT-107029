@@ -25,11 +25,14 @@ namespace ConsoleApp1.Models
         public string Title { get; set; }
         public int Credits { get; set; }
         public int DepartmentID { get; set; }
+        public Nullable<System.DateTime> ModifiedOn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enrollment> Enrollment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Person { get; set; }
         public virtual Department Department { get; set; }
+        public virtual Course Course1 { get; set; }
+        public virtual Course Course2 { get; set; }
     }
 }

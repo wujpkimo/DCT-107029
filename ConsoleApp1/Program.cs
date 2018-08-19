@@ -27,11 +27,11 @@ namespace ConsoleApp1
                 //db.Entry(dept).State = EntityState.Added;
                 //db.SaveChanges();
 
-                var dept = db.Department.Find(20);
-                dept.Name = "John" + DateTime.Now;
-                //db.Entry(dept).State = EntityState.Added;
-                Console.ReadLine();
-                db.SaveChanges();
+                //var dept = db.Department.Find(20);
+                //dept.Name = "John" + DateTime.Now;
+                ////db.Entry(dept).State = EntityState.Added;
+                //Console.ReadLine();
+                //db.SaveChanges();
 
                 //var department = db.Department.Include(p => p.Course);
 
@@ -51,6 +51,13 @@ namespace ConsoleApp1
                 //UpdateDepartment(db);
 
                 //RemoveDepartment(db);
+
+                var items = db.GetDepartment();
+
+                foreach (var item in items)
+                {
+                    Console.WriteLine(item.Name);
+                }
             }
         }
 

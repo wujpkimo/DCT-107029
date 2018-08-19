@@ -95,5 +95,15 @@ namespace ConsoleApp1.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Department_Insert_Result>("Department_Insert", nameParameter, budgetParameter, startDateParameter, instructorIDParameter);
         }
+    
+        public virtual ObjectResult<Department> GetDepartment()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Department>("GetDepartment");
+        }
+    
+        public virtual ObjectResult<Department> GetDepartment(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Department>("GetDepartment", mergeOption);
+        }
     }
 }

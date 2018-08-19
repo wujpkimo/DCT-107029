@@ -16,6 +16,7 @@
         <EntityTypeShape EntityType="ContosoUniversityModel.Department" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Course_dbo_Department_DepartmentID" />
         <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Department_dbo_Instructor_InstructorID" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_Course_Course" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
