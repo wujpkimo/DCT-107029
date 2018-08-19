@@ -236,7 +236,7 @@
           </Key>
           <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Credits" Type="Int32" Nullable="false" />
+          <Property Name="Credits" Type="ContosoUniversityModel.CourseCredits" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Enrollment" Relationship="Self.FK_dbo_Enrollment_dbo_Course_CourseID" FromRole="Course" ToRole="Enrollment" />
           <NavigationProperty Name="Person" Relationship="ContosoUniversityModel.CourseInstructor" FromRole="Course" ToRole="Person" />
@@ -432,6 +432,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EnumType Name="CourseCredits" >
+          <Member Name="Poor" Value="0" />
+          <Member Name="Good" Value="1" />
+          <Member Name="Better" Value="2" />
+          <Member Name="Awesome" Value="3" />
+        </EnumType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

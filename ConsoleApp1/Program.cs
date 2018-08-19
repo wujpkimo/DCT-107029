@@ -18,7 +18,21 @@ namespace ConsoleApp1
             {
                 db.Database.Log = Console.WriteLine;
 
-                db.Configuration.LazyLoadingEnabled = false;
+                var c = new Course()
+                {
+                    Title = "Entity Framework 6.2",
+                    Credits = CourseCredits.Better,
+                    DepartmentID = 1
+                };
+
+                db.Course.Add(c);
+                db.SaveChanges();
+
+                var item = db.Course.Find(c.CourseID);
+
+                Console.WriteLine(item.Title + " " + item.Credits.ToString());
+
+                //db.Configuration.LazyLoadingEnabled = false;
                 //db.Configuration.ProxyCreationEnabled = false;
                 //var dept = db.Department.Find(1);
 
@@ -52,12 +66,12 @@ namespace ConsoleApp1
 
                 //RemoveDepartment(db);
 
-                var items = db.GetDepartment();
+                //var items = db.GetDepartment();
 
-                foreach (var item in items)
-                {
-                    Console.WriteLine(item.Name);
-                }
+                //foreach (var item in items)
+                //{
+                //    Console.WriteLine(item.Name);
+                //}
             }
         }
 
