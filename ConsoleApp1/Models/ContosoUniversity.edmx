@@ -364,7 +364,7 @@
           <Property Name="Budget" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="InstructorID" Type="Int32" />
-          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
           <NavigationProperty Name="Course" Relationship="ContosoUniversityModel.FK_dbo_Course_dbo_Department_DepartmentID" FromRole="Department" ToRole="Course" />
           <NavigationProperty Name="Person" Relationship="ContosoUniversityModel.FK_dbo_Department_dbo_Instructor_InstructorID" FromRole="Department" ToRole="Person" />
         </EntityType>

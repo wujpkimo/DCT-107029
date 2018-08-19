@@ -12,9 +12,17 @@
         {
             var entries = this.ChangeTracker.Entries();
 
-            foreach (var entry in entries)
+            //foreach (var entry in entries)
+            //{
+            //    if (entry.Entity is Course && entry.State == EntityState.Modified)
+            //    {
+            //        entry.CurrentValues.SetValues(new { ModifiedOn = DateTime.Now });
+            //    }
+            //}
+
+            foreach (var entry in entries.Where(p => p.Entity is Course))
             {
-                if (entry.Entity is Course && entry.State == EntityState.Modified)
+                if (entry.State == EntityState.Modified || entry.State == EntityState.Added)
                 {
                     entry.CurrentValues.SetValues(new { ModifiedOn = DateTime.Now });
                 }

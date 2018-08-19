@@ -22,18 +22,27 @@ namespace ConsoleApp1
                 //db.Configuration.ProxyCreationEnabled = false;
                 //var dept = db.Department.Find(1);
 
-                var department = db.Department.Include(p => p.Course);
+                //var dept = db.Course.Find(1);
+                //dept.Title += "!";
+                //db.Entry(dept).State = EntityState.Added;
+                //db.SaveChanges();
 
-                //db.Course.Attach();
+                var dept = db.Department.Find(20);
+                dept.Name = "John" + DateTime.Now;
+                //db.Entry(dept).State = EntityState.Added;
+                Console.ReadLine();
+                db.SaveChanges();
 
-                foreach (var dept in department)
-                {
-                    Console.WriteLine(dept.Name);
-                    foreach (var item in dept.Course)
-                    {
-                        Console.WriteLine("\t" + item.Title);
-                    }
-                }
+                //var department = db.Department.Include(p => p.Course);
+
+                //foreach (var dept in department)
+                //{
+                //    Console.WriteLine(dept.Name);
+                //    foreach (var item in dept.Course)
+                //    {
+                //        Console.WriteLine("\t" + item.Title);
+                //    }
+                //}
 
                 //QueryCourse(db);
 
